@@ -3,7 +3,7 @@
     using System;
     using System.Collections.Generic;
 
-    public class PrimeNumbersGenerator : IPrimeNumbersGenerator
+    internal class PrimeNumbersGenerator : IPrimeNumbersGenerator
     {
         public List<int> GeneratePrimes(int length)
         {

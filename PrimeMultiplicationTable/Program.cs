@@ -23,6 +23,7 @@ namespace PrimeMultiplicationTable
             Console.WriteLine($"Generating HTML multiplication table with the first {n} numbers...");
             Console.WriteLine();
             Thread.Sleep(1000);
+
             return n;
         }
     }

@@ -7,7 +7,7 @@
     using System.Text;
 
     using static Constants;
-    public class PrimeMultiplicationTable : IMultiplicationTable
+    internal class PrimeMultiplicationTable : IMultiplicationTable
     {
         public void GenerateMultiplicationTable(List<int> numbers, int size)
         {
