@@ -18,17 +18,21 @@
 
         private static void SaveTableAsHTML(List<int> numbers, int size, int[,] matrix, StringBuilder sb)
         {
-            sb.Append("<h1 align=center>Prime Multiplication Table</h1>");
+            sb.Append("<h1 align = center>Prime Multiplication Table</h1>");
             sb.Append("<table cellspacing=1 bgcolor=#000000 align=center>");
-            sb.Append($"<h4 align=center>With the first {size} prime numbers:</h4>");
+            sb.Append($"<h4 align = center>With the first {size} prime numbers:</h4>");
 
             FillTable(numbers, matrix, sb);
 
             sb.Append("</table>");
+            sb.Append("<h2 align = center>Thanks for using our application :)</h2>");
+            sb.Append("<h3 align = center>Contact Info</h4>");
+            sb.Append("<h5 align = center>danihristov22@gmail.com</a>");
+            sb.Append("<h5 align = center bgcolor=#000000><a href=https://github.com/DaniHristov/PrimeMultiplicationTable >GitHub Repository</a> </h4>");
+                
             File.WriteAllText(dir, sb.ToString());
+
             Console.WriteLine($"Your table was successfully saved in {dir}.");
-            Console.WriteLine();
-            Console.WriteLine("Thanks for using our application!");
         }
 
         private static void FillTable(List<int> numbers, int[,] matrix, StringBuilder sb)
