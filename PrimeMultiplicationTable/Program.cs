@@ -18,8 +18,15 @@ namespace PrimeMultiplicationTable
 
         private static int ParseInput()
         {   
-            Console.WriteLine("Input a number to find Prime numbers please...");
+            Console.WriteLine("Input a number bigger than 1 to find Prime numbers please...");
             var n = int.Parse(Console.ReadLine());
+
+            while (n<2)
+            {
+                Console.WriteLine("Please input a number bigger than 1 ...");
+                n = int.Parse(Console.ReadLine());
+            }
+
             Console.WriteLine($"Generating HTML multiplication table with the first {n} numbers...");
             Console.WriteLine();
             Thread.Sleep(1000);
