@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace PrimeMultiplicationTable.Tests
 {
@@ -34,6 +35,20 @@ namespace PrimeMultiplicationTable.Tests
             var primesList = primeNumbersGenerator.GeneratePrimes(n);
 
             Assert.IsNotEmpty(primesList);
+        }
+
+        [Test]
+        [TestCase(6)]
+        [TestCase(4)]
+        [TestCase(3)]
+        public void GeneratePrimesListShouldBeWithCorrectCount(int n)
+        {
+            var primesList = primeNumbersGenerator.GeneratePrimes(n);
+
+            var actual = primesList.Count();
+            var expected = n + 1;
+
+            Assert.AreEqual(expected, actual);
         }
 
         [Test]
