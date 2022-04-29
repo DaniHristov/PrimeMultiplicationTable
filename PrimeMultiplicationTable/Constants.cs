@@ -2,6 +2,6 @@
 {
     public static class Constants
     {
-        public const string dir = @"D:\PrimeMultiplicationTable.html";
+        public const string dir = @"..\..\..\OutputResult\PrimeMultiplicationTable.html";
     }
 }
