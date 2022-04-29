@@ -1,36 +1,47 @@
-using NUnit.Framework;
-using System.Collections.Generic;
+﻿using NUnit.Framework;
 
 namespace PrimeMultiplicationTable.Tests
 {
-    public class Tests
+    [TestFixture]
+    public class PrimeMultiplicationTableTests
     {
+        private PrimeMultiplicationTable primeMultiplicationTable;
+        private PrimeNumbersGenerator primeNumbersGenerator;
+
         [SetUp]
         public void Setup()
         {
-
+            primeMultiplicationTable = new PrimeMultiplicationTable();
+            primeNumbersGenerator = new PrimeNumbersGenerator();
         }
 
         [Test]
-        public void PrimeNumbersGeneratorShouldGenerateCorrectNumbers()
+        public void PrimeMultiplicationTableShouldNotBeNull()
         {
-            var primeNumberGenerator = new PrimeNumbersGenerator();
-            var numbersQuantity = 5;
-
-            var expectedPrimesList = new List<int> { 0, 2, 3, 5, 7, 11 };
-            var primes = primeNumberGenerator.GeneratePrimes(numbersQuantity);
-
-            Assert.AreEqual(expectedPrimesList, primes);
+            Assert.IsNotNull(primeMultiplicationTable);
         }
 
         [Test]
-        public void PrimeNumbersGeneratorShouldNotBeNull()
+        [TestCase(3)]
+        [TestCase(7)]
+        [TestCase(9)]
+        [TestCase(5)]
+        public void PrimeMultiplicationTableShouldReturnCorrectValues(int n)
         {
-            var primeNumberGenerator = new PrimeNumbersGenerator();
+            var primes = primeNumbersGenerator.GeneratePrimes(n);
+            var matrix = primeMultiplicationTable.GenerateMultiplicationTable(primes, n);
 
-            Assert.IsNotNull(primeNumberGenerator);
+            var firstNumber = matrix[1, 1];
+            var secondNumber = matrix[2, 2];
+            var thirdNumber = matrix[3, 3];
+
+            var firstExpected = 4;
+            var secondExpected = 9;
+            var thirdExpected = 25;
+
+            Assert.AreEqual(firstExpected, firstNumber);
+            Assert.AreEqual(secondExpected, secondNumber);
+            Assert.AreEqual(thirdExpected, thirdNumber);
         }
-
-
     }
 }

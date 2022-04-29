@@ -9,11 +9,13 @@
     using static Constants;
     public class PrimeMultiplicationTable : IMultiplicationTable
     {
-        public void GenerateMultiplicationTable(List<int> numbers, int size)
+        public int[,] GenerateMultiplicationTable(List<int> numbers, int size)
         {
             int[,] matrix = new int[size + 1, size + 1];
             var sb = new StringBuilder();
             SaveTableAsHTML(numbers, size, matrix, sb);
+
+            return matrix;
         }
 
         private static void SaveTableAsHTML(List<int> numbers, int size, int[,] matrix, StringBuilder sb)

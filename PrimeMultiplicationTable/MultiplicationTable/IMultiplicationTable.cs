@@ -4,6 +4,6 @@
 
     public interface IMultiplicationTable
     {
-        public void GenerateMultiplicationTable(List<int> numbers, int size);
+        public int[,] GenerateMultiplicationTable(List<int> numbers, int size);
     }
 }
