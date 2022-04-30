@@ -3,7 +3,7 @@ using System.Threading;
 
 namespace PrimeMultiplicationTable
 {
-    public class Output
+    public class Input
     {
         static void Main(string[] args)
         {
