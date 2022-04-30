@@ -17,4 +17,8 @@
     <ProjectReference Include="..\PrimeMultiplicationTable\PrimeMultiplicationTable.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="OutputResult\" />
+  </ItemGroup>
+
 </Project>
