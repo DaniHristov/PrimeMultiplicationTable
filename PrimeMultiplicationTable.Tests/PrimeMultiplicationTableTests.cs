@@ -29,8 +29,11 @@ namespace PrimeMultiplicationTable.Tests
         [TestCase(5)]
         public void PrimeMultiplicationTableShouldReturnCorrectValues(int n)
         {
-            var primes = primeNumbersGenerator.GeneratePrimes(n);
-            var matrix = primeMultiplicationTable.GenerateMultiplicationTable(primes, n);
+            var primes = primeNumbersGenerator
+                .GeneratePrimes(n);
+
+            var matrix = primeMultiplicationTable
+                .GenerateMultiplicationTable(primes, n);
 
             var firstNumber = matrix[1, 1];
             var secondNumber = matrix[2, 2];
@@ -46,10 +49,10 @@ namespace PrimeMultiplicationTable.Tests
         }
 
         [Test]
-        [TestCase(5)]
-        public void PrimeMultiplicationTableShouldReturnCorrectTable(int n)
+        public void PrimeMultiplicationTableShouldReturnCorrectTable()
         {
-            var table = primeMultiplicationTable.GenerateMultiplicationTable(primeNumbersGenerator.GeneratePrimes(n),n);
+            var table = primeMultiplicationTable
+                .GenerateMultiplicationTable(primeNumbersGenerator.GeneratePrimes(5),5);
 
             int[,] expectedTable = new int[,]
             {
