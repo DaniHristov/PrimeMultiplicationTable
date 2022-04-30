@@ -21,7 +21,8 @@ namespace PrimeMultiplicationTable.Tests
             var numbersQuantity = 5;
 
             var expectedPrimesList = new List<int> { 0, 2, 3, 5, 7, 11 };
-            var primes = primeNumbersGenerator.GeneratePrimes(numbersQuantity);
+            var primes = primeNumbersGenerator
+                .GeneratePrimes(numbersQuantity);
 
             Assert.AreEqual(expectedPrimesList, primes);
         }
